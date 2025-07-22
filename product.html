@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ziferr Offc</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    /* CSS sama seperti sebelumnya */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: #fefefe;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(135deg, #84fab0, #8fd3f4);
+      padding: 80px 20px;
+      color: white;
+      position: relative;
+    }
+    .hero-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      text-align: center;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .hero-text h1 {
+      font-size: 2.8rem;
+      animation: fadeInUp 0.6s ease;
+    }
+    .hero-text p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      animation: fadeInUp 0.8s ease;
+    }
+    .hero-text button {
+      margin-top: 20px;
+      padding: 12px 25px;
+      font-size: 1rem;
+      border: none;
+      background: white;
+      color: #333;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+      animation: fadeInUp 1s ease;
+    }
+    .hero-text button:hover {
+      background: #eee;
+    }
+    .hero-image img {
+      width: 200px;
+      animation: float 3s ease-in-out infinite;
+    }
+    @media(min-width: 768px) {
+      .hero-container {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+      }
+    }
+    #produk-section {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: 0.6s ease;
+      padding: 40px 20px;
+    }
+    #produk-section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2rem;
+    }
+    .produk {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+      transition: 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .form-pesan {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .form-pesan input, .form-pesan select {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    .form-pesan button {
+      background: #4caf50;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .desc {
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 5px;
+      min-height: 40px;
+    }
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+    a {
+      color: #8fd3f4;
+      text-decoration: none;
+    }
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 0 8px rgba(0,0,0,0.2);
+      background: white;
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <img src="https://files.catbox.moe/ycjj7n.jpg" alt="Logo Toko" class="logo" />
+  <header>
+    <div class="hero-container">
+      <div class="hero-text">
+        <h1>Ziperr Product</h1>
+        <p>Belanja Kebutuhan Hosting Murah</p>
+        <button onclick="tampilkanProduk()">Lihat Produk</button>
+      </div>
+      <div class="hero-image">
+        <img src="https://files.catbox.moe/ycjj7n.jpg" alt="Ilustrasi Belanja" />
+      </div>
+    </div>
+  </header>
+  <section id="produk-section">
+    <h2>Daftar Produk</h2>
+    <div class="produk">
+      <div class="card">
+        <img src="https://files.catbox.moe/0x87ve.jpg" alt="Panel Private">
+        <h3>Panel Pterodatcly Server Public</h3>
+        <p class="desc">Panel Server Public Mulai Dari Ram 1-unli.</p>
+        <form class="form-pesan" onsubmit="pesanWhatsApp(event, 'Panel Private')">
+          <input type="text" placeholder="Nama Anda" required>
+          <select required>
+            <option 
+value="1000">Rp1.000</option>
+            <option
+value="2000">Rp 2.000</option>
+            <option
+value="3000">Rp3.000</option>
+            <option
+value="4000">Rp4.000</option>
+            <option
+value="5000">Rp5.000</option>
+            <option
+value="6000">Rp6.000</option>
+            <option
+value="7000">Rp7.000</option>
+            <option value="8000">Rp8.000</option>
+            <option value="9000">Rp9.000</option>
+          </select>
+value="10000">Rp10.000</option>
+            <option
+          <input type="number" placeholder="Jumlah" required>
+          <button type="submit">Pesan via WhatsApp</button>
+        </form>
+      </div>
+      <div class="card">
+        <img src="https://files.catbox.moe/i9t6kx.jpg" alt="Resseler Panel Public">
+        <h3>Reseller Panel Public</h3>
+        <p class="desc">Benefit: Bisa Jualan Panel Public, Bisa Membuat Server Untuk Sendiri.</p>
+        <form class="form-pesan" onsubmit="pesanWhatsApp(event, 'Reseller Panel Private')">
+          <input type="text" placeholder="Nama Anda" required>
+          <select required>
+            <option value="5000">Rp5.000</option>
+          </select>
+          <input type="number" placeholder="Jumlah" required>
+          <button type="submit">Pesan via WhatsApp</button>
+        </form>
+      </div>
+      <div class="card">
+        <img src="https://files.catbox.moe/ljrg7n.jpg" alt="Sc Bug Strarev">
+        <h3>Admin Panel Public</h3>
+        <p class="desc">Keuntungan: Bisa Open Reseller Panel,Jual Panel,Dll</p>
+        <form class="form-pesan" onsubmit="pesanWhatsApp(event, 'Script Strarev')">
+          <input type="text" placeholder="Nama Anda" required>
+          <select required>
+            <option value="8000">Rp8.000</option>
+          </select>
+          <input type="number" placeholder="Jumlah" required>
+          <button type="submit">Pesan via WhatsApp</button>
+        </form>
+      </div>
+      <div class="card">
+        <img src="https://files.catbox.moe/22jbpu.png" alt=" Jasa Pembuatan Website">
+  <h3> Jasa Pembuatan Website Tampilan Keren</h3>
+  <p class="desc">Jasa Pembuatan Website Profile 3k, Website Payment, 5k, Web Payment + Profile 8k.</p>
+  <form class="form-pesan" onsubmit="pesanWhatsApp(event, 'Jasa Pembuatan Website Fase 2', 10000)">
+    <input type="text" placeholder="Nama Anda" required>
+    <select required>
+      <option value="3000">Rp3.000</option>
+      <option value="5000">Rp5.000</option>
+      <option value="8000">Rp8.000</option>
+      <option 
+</select>
+<input type="number" placeholder="Jumlah" required>
+    <button type="submit">Pesan via WhatsApp</button>
+  </form>
+</div>
+  </section>
+  <footer>
+    <h3>Kontak Kami</h3>
+    <p>WhatsApp: <a href="https://wa.me/6281263620850" target="_blank">6281263620850</a></p>
+    <p>Email: <a href="mailto:ziperrofc@email.com">ziperrofc@email.com</a></p>
+  </footer>
+  <audio id="bg-music" autoplay loop>
+    <source src="https://files.catbox.moe/bzca5n.mp3" type="audio/mp3">
+    Browser kamu tidak mendukung audio.
+  </audio>
+  <script>
+    function tampilkanProduk() {
+      document.getElementById('produk-section').classList.add('show');
+      window.scrollTo({ top: document.getElementById('produk-section').offsetTop, behavior: 'smooth' });
+    }
+    function pesanWhatsApp(event, produk) {
+      event.preventDefault();
+      const form = event.target;
+      const nama = form.querySelector('input[type=text]').value;
+      const select = form.querySelector('select');
+      const harga = parseInt(select.value);
+      const jumlah = parseInt(form.querySelector('input[type=number]').value);
+      const total = harga * jumlah;
+      const hargaFormatted = harga.toLocaleString('id-ID');
+      const totalFormatted = total.toLocaleString('id-ID');
+      const pesan = `Halo, saya ${nama} ingin memesan:\nProduk: ${produk}\nHarga Satuan: Rp${hargaFormatted}\nJumlah: ${jumlah}\nTotal: Rp${totalFormatted}`;
+      const nomorWA = "6281263620850";
+      const url = `https://wa.me/${nomorWA}?text=${encodeURIComponent(pesan)}`;
+      window.open(url, '_blank');
+      form.reset();
+    }
+  </script>
+</body>
+</html>
